@@ -66,7 +66,7 @@ namespace SZ {
 
 
             size_t num_params=0;
-            T c_a,c_b,c_c,c_d;
+            
 
             auto c_params=SZ::readfile<T>("c_params.dat",num_params);
             if (num_params!=4){
@@ -349,7 +349,7 @@ namespace SZ {
                         d = data + begin + i * stride;
                         if(stride!=1)
                         recover(*d, interp_cubic(*(d - stride3x), *(d - stride), *(d + stride), *(d + stride3x)));
-                        else(stride!=1)
+                        else
                         recover(*d, interp_cubic_p(*(d - stride3x), *(d - stride), *(d + stride), *(d + stride3x),c_a,c_b,c_c,c_d ));
                     }
                     d = data + begin + stride;
@@ -543,6 +543,7 @@ namespace SZ {
         std::array<size_t, N> dimension_offsets;
         std::vector<std::array<int, N>> dimension_sequences;
         int direction_sequence_id;
+        T c_a,c_b,c_c,c_d;
     };
 
 
