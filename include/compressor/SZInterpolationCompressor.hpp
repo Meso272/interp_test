@@ -70,7 +70,7 @@ namespace SZ {
 
             auto c_params=SZ::readfile<T>("c_params.dat",num_params);
             if (num_params!=4){
-                std::cout<<"Read params failed."<<endl;
+                std::cout<<"Read params failed."<<std::endl;
                 c_a=c_d=-1/16;
                 c_b=c_c=9/16;
             }
